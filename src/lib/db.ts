@@ -1299,7 +1299,8 @@ export async function getLeaderboard(limit = 50) {
       solved: 0,
       attempts: info.attempts,
     };
-    curr.totalScore += best.score;
+    // Only award score for passed submissions — ignores non-zero scores on old failed rows
+    curr.totalScore += best.passed ? best.score : 0;
     if (best.passed) {
       curr.solved += 1;
       curr.bestRuntimeMs = Math.min(curr.bestRuntimeMs, best.runtimeMs);
@@ -1357,9 +1358,11 @@ export async function getProfile(userId: string) {
 
   const solvedSet = new Set(submissions.filter((item) => item.status === "passed").map((item) => item.question_id));
 
-  // Use best (highest) score per unique question to prevent score stacking on retries
+  // Use best (highest) score per unique question, passed submissions only
+  // This correctly handles old DB rows where failed submissions have non-zero scores
   const bestScoreByQuestion = new Map<string, number>();
   for (const s of submissions) {
+    if (s.status !== "passed") continue;
     const prev = bestScoreByQuestion.get(s.question_id) ?? 0;
     if (Number(s.score) > prev) {
       bestScoreByQuestion.set(s.question_id, Number(s.score));
