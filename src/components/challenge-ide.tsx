@@ -653,13 +653,6 @@ export function ChallengeIde({ title, challengeSlug, questionId }: ChallengeIdeP
   );
 }
 
-
-type ChallengeIdeProps = {
-  title: string;
-  challengeSlug: string;
-  questionId?: string;
-};
-
 type SubmissionResult = {
   error?: string;
   status?: "passed" | "failed";
