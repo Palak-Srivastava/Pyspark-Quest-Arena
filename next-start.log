@@ -1,0 +1,373 @@
+
+> pyspark-practice-app@1.0.0 start
+> next start
+
+▲ Next.js 16.2.10
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.4:3000
+✓ Ready in 1040ms
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42710',
+  message: 'extension "pgcrypto" already exists, skipping',
+  file: 'extension.c',
+  line: '1791',
+  routine: 'CreateExtension'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "users" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "users_email_unique_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "questions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "description" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "solved_count" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "company_tags" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "discussions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "discussions_challenge_slug_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions_challenge_slug_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions_user_id_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions_user_id_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions_expires_at_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42710',
+  message: 'extension "pgcrypto" already exists, skipping',
+  file: 'extension.c',
+  line: '1791',
+  routine: 'CreateExtension'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "users" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "users_email_unique_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "questions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "description" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "solved_count" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "company_tags" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "problem_statement" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "input_schema" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "output_schema" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "constraints" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "hints" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "walkthrough" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42701',
+  message: 'column "expected_output" of relation "questions" already exists, skipping',
+  file: 'tablecmds.c',
+  line: '7471',
+  routine: 'check_for_column_name_collision'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "discussions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "discussions_challenge_slug_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions_challenge_slug_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "submissions_user_id_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions_user_id_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "sessions_expires_at_idx" already exists, skipping',
+  file: 'index.c',
+  line: '889',
+  routine: 'index_create'
+}
+⨯ Error: AUTH_SECRET must be set and at least 32 characters in production.
+    at <unknown> (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22779)
+    at ed (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22854)
+    at el (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:23006)
+    at ef (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:7:290)
+    at eg (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:16:1258)
+    at async w (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:1795)
+    at async l (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:5248)
+⨯ Error: AUTH_SECRET must be set and at least 32 characters in production.
+    at <unknown> (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22779)
+    at ed (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22854)
+    at el (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:23006)
+    at ef (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:7:290)
+    at eg (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:16:1258)
+    at async w (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:1795)
+    at async l (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:5248)
+⨯ Error: AUTH_SECRET must be set and at least 32 characters in production.
+    at <unknown> (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22779)
+    at ed (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22854)
+    at el (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:23006)
+    at ef (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:7:290)
+    at eg (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:16:1258)
+    at async w (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:1795)
+    at async l (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:5248)
+⨯ Error: AUTH_SECRET must be set and at least 32 characters in production.
+    at <unknown> (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22779)
+    at ed (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:22854)
+    at el (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:1:23006)
+    at ef (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:7:290)
+    at eg (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\src_lib_session_ts_0azwx00._.js:16:1258)
+    at async w (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:1795)
+    at async l (C:\Users\982651\OneDrive - American Airlines, Inc\Documents\Pyspark Practice app\.next\server\chunks\[root-of-the-server]__0xf17h5._.js:1:5248)

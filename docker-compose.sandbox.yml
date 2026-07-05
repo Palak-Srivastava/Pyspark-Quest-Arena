@@ -1,0 +1,11 @@
+services:
+  spark-runner:
+    build:
+      context: ./docker/spark-runner
+    container_name: spark-runner
+    environment:
+      SANDBOX_RUNNER_TOKEN: ${SANDBOX_RUNNER_TOKEN:-local-runner-token}
+      SANDBOX_RUNNER_HOST: 0.0.0.0
+      SANDBOX_RUNNER_PORT: 8088
+    ports:
+      - "8088:8088"
