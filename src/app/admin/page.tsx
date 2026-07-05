@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type AdminQuestion = {
@@ -23,12 +24,29 @@ type ModerationItem = {
 };
 
 export default function AdminPage() {
+  const router = useRouter();
+  const [authChecked, setAuthChecked] = useState(false);
   const [search, setSearch] = useState("");
   const [items, setItems] = useState<AdminQuestion[]>([]);
   const [reports, setReports] = useState<ModerationItem[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // Auth guard — redirect non-admins immediately
   useEffect(() => {
+    fetch("/api/auth/me", { cache: "no-store", credentials: "include" })
+      .then((res) => res.json())
+      .then((data: { user: { isAdmin?: boolean } | null }) => {
+        if (!data.user?.isAdmin) {
+          router.replace("/");
+        } else {
+          setAuthChecked(true);
+        }
+      })
+      .catch(() => router.replace("/"));
+  }, [router]);
+
+  useEffect(() => {
+    if (!authChecked) return;
     let active = true;
     const params = new URLSearchParams({ search, limit: "200" });
     setLoading(true);
@@ -59,7 +77,15 @@ export default function AdminPage() {
     return () => {
       active = false;
     };
-  }, [search]);
+  }, [search, authChecked]);
+
+  if (!authChecked) {
+    return (
+      <section className="flex min-h-[40vh] items-center justify-center">
+        <p className="text-sm text-slate-400">Verifying access…</p>
+      </section>
+    );
+  }
 
   return (
     <section className="space-y-4">
