@@ -38,10 +38,10 @@ export function evaluateSubmission(code: string, testCases: JudgeCase[] = []) {
     testCases.length > 0
       ? testCases
       : [
-          { id: "public-1", name: "Public sample", visibility: "public" as const, requiredPatterns: ["def solve"] },
-          { id: "public-2", name: "Public edge", visibility: "public" as const, requiredPatterns: ["select"] },
-          { id: "hidden-1", name: "Hidden scale", visibility: "hidden" as const, requiredPatterns: ["groupBy"] },
-          { id: "hidden-2", name: "Hidden skew", visibility: "hidden" as const, requiredPatterns: ["join"] },
+          { id: "public-1", name: "solve() function defined", visibility: "public" as const, requiredPatterns: ["def solve"] },
+          { id: "public-2", name: "Uses PySpark transformation", visibility: "public" as const, requiredPatterns: [] },
+          { id: "hidden-1", name: "No driver-side operations", visibility: "hidden" as const, requiredPatterns: [] },
+          { id: "hidden-2", name: "Returns a DataFrame", visibility: "hidden" as const, requiredPatterns: ["return"] },
         ];
 
   const testResults = generatedCases.map((testCase) => {
