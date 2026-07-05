@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security concern
+    url: https://example.com/security-contact
+    about: Replace this URL with your private security reporting channel before going live.

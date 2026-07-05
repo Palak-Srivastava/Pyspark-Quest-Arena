@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a broken flow, crash, or incorrect behavior.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Clear summary of the issue.
+      placeholder: Tell us what you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps to reproduce the issue.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Browser, OS, route, and screenshots/logs.

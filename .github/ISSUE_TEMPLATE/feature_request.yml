@@ -1,0 +1,24 @@
+name: Feature request
+description: Suggest an improvement for learning experience or platform quality.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      placeholder: What user pain point are you solving?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: Describe the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Any alternatives?
