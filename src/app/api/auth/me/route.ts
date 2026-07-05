@@ -3,6 +3,11 @@ import type { NextRequest } from "next/server";
 
 import { applyAuthRotation, resolveAuthContext } from "@/lib/session";
 
+function checkIsAdmin(email: string) {
+  const adminEmail = process.env.ADMIN_EMAIL ?? "";
+  return adminEmail.length > 0 && email.toLowerCase() === adminEmail.toLowerCase();
+}
+
 export async function GET(request: NextRequest) {
   const auth = await resolveAuthContext(request);
   if (!auth) {
@@ -14,6 +19,7 @@ export async function GET(request: NextRequest) {
       id: auth.user.id,
       name: auth.user.name,
       email: auth.user.email,
+      isAdmin: checkIsAdmin(auth.user.email),
     },
   }, { headers: { "Cache-Control": "no-store" } });
 
