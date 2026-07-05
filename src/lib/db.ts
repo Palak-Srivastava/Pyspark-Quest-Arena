@@ -1251,35 +1251,60 @@ export async function getLeaderboard(limit = 50) {
     {
       user_id: string;
       user_name: string;
+      question_id: string;
       score: number;
       status: "passed" | "failed";
       runtime_ms: number;
     }[]
   >`
-    select user_id, user_name, score, status, runtime_ms
+    select user_id, user_name, question_id, score, status, runtime_ms
     from submissions
   `;
 
+  // Track total attempts per user
+  const userAttempts = new Map<string, { userId: string; userName: string; attempts: number }>();
+  for (const s of submissions) {
+    const u = userAttempts.get(s.user_id);
+    if (u) {
+      u.attempts += 1;
+    } else {
+      userAttempts.set(s.user_id, { userId: s.user_id, userName: s.user_name, attempts: 1 });
+    }
+  }
+
+  // Best score per (user, question) to prevent stacking on retries
+  const bestByKey = new Map<string, { score: number; passed: boolean; runtimeMs: number }>();
+  for (const s of submissions) {
+    const key = `${s.user_id}:${s.question_id}`;
+    const curr = bestByKey.get(key);
+    const score = Number(s.score);
+    const runtimeMs = Number(s.runtime_ms);
+    if (!curr || score > curr.score || (score === curr.score && s.status === "passed" && !curr.passed)) {
+      bestByKey.set(key, { score, passed: s.status === "passed", runtimeMs });
+    }
+  }
+
+  // Aggregate best scores to per-user totals
   const byUser = new Map<string, { userId: string; userName: string; totalScore: number; bestRuntimeMs: number; solved: number; attempts: number }>();
 
-  for (const submission of submissions) {
-    const current = byUser.get(submission.user_id) ?? {
-      userId: submission.user_id,
-      userName: submission.user_name,
+  for (const [key, best] of bestByKey) {
+    const userId = key.split(":")[0];
+    const info = userAttempts.get(userId);
+    if (!info) continue;
+    const curr = byUser.get(userId) ?? {
+      userId,
+      userName: info.userName,
       totalScore: 0,
       bestRuntimeMs: Number.POSITIVE_INFINITY,
       solved: 0,
-      attempts: 0,
+      attempts: info.attempts,
     };
-
-    current.attempts += 1;
-    current.totalScore += Number(submission.score);
-    if (submission.status === "passed") {
-      current.solved += 1;
-      current.bestRuntimeMs = Math.min(current.bestRuntimeMs, Number(submission.runtime_ms));
+    curr.totalScore += best.score;
+    if (best.passed) {
+      curr.solved += 1;
+      curr.bestRuntimeMs = Math.min(curr.bestRuntimeMs, best.runtimeMs);
     }
-
-    byUser.set(submission.user_id, current);
+    byUser.set(userId, curr);
   }
 
   return Array.from(byUser.values())
@@ -1331,7 +1356,16 @@ export async function getProfile(userId: string) {
   `;
 
   const solvedSet = new Set(submissions.filter((item) => item.status === "passed").map((item) => item.question_id));
-  const totalScore = submissions.reduce((sum, item) => sum + Number(item.score), 0);
+
+  // Use best (highest) score per unique question to prevent score stacking on retries
+  const bestScoreByQuestion = new Map<string, number>();
+  for (const s of submissions) {
+    const prev = bestScoreByQuestion.get(s.question_id) ?? 0;
+    if (Number(s.score) > prev) {
+      bestScoreByQuestion.set(s.question_id, Number(s.score));
+    }
+  }
+  const totalScore = Array.from(bestScoreByQuestion.values()).reduce((sum, v) => sum + v, 0);
 
   const level = Math.max(1, Math.floor(totalScore / 600) + 1);
   const nextLevelScore = level * 600;
