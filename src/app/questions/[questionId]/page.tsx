@@ -11,7 +11,7 @@ import { QuestionBookmarkButton } from "@/components/question-bookmark-button";
 import { getDiscussionByChallenge, getQuestionById, getSubmissionsByChallenge } from "@/lib/db";
 import { ACCESS_COOKIE } from "@/lib/session";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ questionId: string }>;
