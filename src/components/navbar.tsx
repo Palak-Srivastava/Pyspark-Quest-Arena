@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
 
 import { AuthCta } from "@/components/auth-cta";
@@ -12,13 +13,25 @@ const links = [
   { href: "/arena", label: "Arena" },
   { href: "/bookmarks", label: "Bookmarks" },
   { href: "/open-source", label: "Open Source" },
-  { href: "/admin", label: "Admin" },
+  { href: "/admin", label: "Admin", adminOnly: true },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/profile", label: "Profile" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/auth/me", { cache: "no-store", credentials: "include" })
+      .then((res) => res.json())
+      .then((data: { user: { isAdmin?: boolean } | null }) => {
+        setIsAdmin(data.user?.isAdmin === true);
+      })
+      .catch(() => {});
+  }, [pathname]);
+
+  const visibleLinks = links.filter((link) => !link.adminOnly || isAdmin);
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b1424]/80 backdrop-blur-xl">
@@ -29,7 +42,7 @@ export function Navbar() {
         </Link>
 
         <nav className="flex items-center gap-2">
-          {links.map((link) => {
+          {visibleLinks.map((link) => {
             const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
